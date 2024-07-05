@@ -128,3 +128,4 @@ C:\Users\ajaye\DatingApp\api\obj\Debug\net8.0\API.RazorAssemblyInfo.cache
 C:\Users\ajaye\DatingApp\api\obj\Debug\net8.0\API.RazorAssemblyInfo.cs
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\ajaye\DatingApp\api\obj\Debug\net8.0\API.sourcelink.json
