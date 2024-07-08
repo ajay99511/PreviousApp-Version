@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj": {}
+    "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj": {
+    "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\ajaye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ajaye\\DatingApp\\API\\obj\\",
+        "outputPath": "C:\\Users\\ajaye\\DatingApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ajaye\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -66,6 +70,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.0-preview1, )"
             }
           },
           "imports": [

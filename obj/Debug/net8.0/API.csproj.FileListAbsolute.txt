@@ -129,3 +129,11 @@ C:\Users\ajaye\DatingApp\api\obj\Debug\net8.0\API.RazorAssemblyInfo.cs
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
 C:\Users\ajaye\DatingApp\api\obj\Debug\net8.0\API.sourcelink.json
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
