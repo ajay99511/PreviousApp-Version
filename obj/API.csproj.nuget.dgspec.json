@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj": {}
+    "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj": {
+    "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj",
+        "projectPath": "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\ajaye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ajaye\\DatingApp\\api\\obj\\",
+        "outputPath": "C:\\Users\\ajaye\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ajaye\\AppData\\Roaming\\NuGet\\NuGet.Config",
