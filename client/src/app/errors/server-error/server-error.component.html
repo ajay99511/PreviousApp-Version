@@ -1,0 +1,16 @@
+<h3>Internal Server Error</h3>
+@if(error) 
+{
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weight-bold"></p>
+    <p>What to do next?</p>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <p class="text-weight-bold"></p>
+    <code class="mt-5" style="background-color: rgb(190, 229, 229);">
+        {{error.details}}
+    </code>
+}

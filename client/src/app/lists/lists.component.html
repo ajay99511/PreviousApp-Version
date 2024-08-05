@@ -1,0 +1,53 @@
+<div class="text-center mt-3">
+    <h2>{{getTitle()}}</h2>
+</div>
+<div class="container mt-3">
+    <div class="d-flex">
+        <div class="btn-group">
+            <button
+            class="btn btn-primary"
+            btnRadio ="liked"
+            name="liked"
+            [(ngModel)] = "predicate"
+            (click)="LoadLikes()"
+            >Members you Like</button>
+            <button
+            class="btn btn-primary"
+            btnRadio ="likedBy"
+            name="likedBy"
+            [(ngModel)] = "predicate"
+            (click)="LoadLikes()"
+            >Members like you</button>
+            <button
+            class="btn btn-primary"
+            btnRadio ="mutual"
+            name="mutual"
+            [(ngModel)] = "predicate"
+            (click)="LoadLikes()"
+            >Mutual likes</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        @for (member of likesService.paginatedResult()?.items; track member.id) {
+            <div class="col-2">
+                <app-member-card [member]="member"></app-member-card>
+            </div>
+        }
+    </div>
+</div>
+@if (likesService.paginatedResult()?.pagination) {
+    <div class="d-flex justify-content-center">
+        <pagination 
+        [boundaryLinks]="true" 
+        [totalItems]="likesService.paginatedResult()?.pagination!.totalItems"
+        [maxSize]="10"
+        [itemsPerPage]="likesService.paginatedResult()?.pagination!.itemsPerPage"
+        [(ngModel)] = "likesService.paginatedResult()?.pagination!.currentPage"
+        (pageChanged)="pageChanged($event)"
+        previousText="&lsaquo;" 
+        nextText="&rsaquo;" 
+        firstText="&laquo;" 
+        lastText="&raquo;">
+        </pagination>
+    </div>
+}
