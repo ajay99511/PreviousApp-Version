@@ -11106,11 +11106,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\ajaye\\DatingApp\\API\\API.csproj",
+      "projectPath": "C:\\Users\\ajaye\\DatingApp\\api\\API.csproj",
       "packagesPath": "C:\\Users\\ajaye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ajaye\\DatingApp\\API\\obj\\",
+      "outputPath": "C:\\Users\\ajaye\\DatingApp\\api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11211,7 +11211,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

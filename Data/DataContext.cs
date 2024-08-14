@@ -13,6 +13,7 @@ IdentityUserClaim<int>,AppUserRole,IdentityUserLogin<int>,IdentityRoleClaim<int>
     public DbSet<Message> Messages { get; set; }
     public DbSet<Group> groups{ get; set; }
     public DbSet<Connection> connections{ get; set; }
+    public DbSet<Post> Posts{ get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -50,6 +51,11 @@ IdentityUserClaim<int>,AppUserRole,IdentityUserLogin<int>,IdentityRoleClaim<int>
         builder.Entity<Message>()
             .HasOne(s=>s.Recipient)
             .WithMany(x=>x.MessageRecieved)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Entity<Post>()
+            .HasOne(c=>c.Creator)
+            .WithMany(x=>x.Posts)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

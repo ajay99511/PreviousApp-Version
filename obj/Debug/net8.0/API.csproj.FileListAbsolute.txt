@@ -146,3 +146,7 @@ C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.Enti
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\client\package-lock.json
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\client\package.json
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\package-lock.json
+C:\Users\ajaye\DatingApp\api\bin\Debug\net8.0\package.json
