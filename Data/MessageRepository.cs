@@ -1,3 +1,4 @@
+// using System.Diagnostics.Contracts;
 using API.DTOs;
 using API.Entities;
 using API.Helpers;
@@ -5,12 +6,17 @@ using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
+// using SQLitePCL;
 
 namespace API.Data;
 
 public class MessageRepository(DataContext context,IMapper mapper) : IMessageRepository
 {
+    public void AddGroup(Group groupName)
+    {
+        context.groups.Add(groupName);
+    }
+
     public void AddMessage(Message message)
     {
         context.Messages.Add( message );
@@ -19,6 +25,18 @@ public class MessageRepository(DataContext context,IMapper mapper) : IMessageRep
     public void DeleteMessage(Message message)
     {
         context.Messages.Remove( message );
+    }
+
+    public async Task<Connection?> GetConnection(string connectionId)
+    {
+        return await context.connections.FindAsync( connectionId );
+    }
+
+    public async Task<Group?> GetMessageGroup(string groupName)
+    {
+        return await context.groups
+        .Include(x=>x.Connections)
+        .FirstOrDefaultAsync(x=>x.Name == groupName);
     }
 
     public async Task<Message?> GetMessage(int id)
@@ -47,12 +65,14 @@ public class MessageRepository(DataContext context,IMapper mapper) : IMessageRep
     public async Task<IEnumerable<MessageDto>> GetMessageThread(string currentUsername, string recipientUsername)
     {
         var messages = await context.Messages
-        .Include(x=>x.Sender).ThenInclude(x=>x.Photos)
-        .Include(x=>x.Recipient).ThenInclude(x=>x.Photos)
         .Where(x=>x.RecipientUsername == currentUsername && x.RecipientDeleted == false && x.SenderUsername == recipientUsername ||
         x.RecipientUsername == recipientUsername && x.SenderDeleted == false && x.SenderUsername == currentUsername)
         .OrderBy(x=>x.MessageSent)
+        .ProjectTo<MessageDto>(mapper.ConfigurationProvider)
         .ToListAsync();
+
+        // .Include(x=>x.Sender).ThenInclude(x=>x.Photos)
+        // .Include(x=>x.Recipient).ThenInclude(x=>x.Photos)
 
         var unreadMessages = messages.Where(x=>x.DateRead == null && x.RecipientUsername == currentUsername).ToList();
         if(unreadMessages.Count != 0)
@@ -60,11 +80,25 @@ public class MessageRepository(DataContext context,IMapper mapper) : IMessageRep
             unreadMessages.ForEach(x=>x.DateRead = DateTime.UtcNow);
             await context.SaveChangesAsync();
         }
-        return mapper.Map<IEnumerable<MessageDto>>(messages);
+        return messages;
+        // mapper.Map<IEnumerable<MessageDto>>(messages);
+    }
+
+    public void RemoveConnection(Connection connection)
+    {
+        context.connections.Remove(connection);
     }
 
     public async Task<bool> SaveAllAsync()
     {
         return await context.SaveChangesAsync()>0;
+    }
+
+    public async Task<Group?> GetGroupForConnection(string connectionId)
+    {
+        return await context.groups
+            .Include(x=>x.Connections)
+            .Where(x=>x.Connections.Any(c=>c.ConnectionId == connectionId))
+            .FirstOrDefaultAsync();
     }
 }

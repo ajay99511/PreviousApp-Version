@@ -24,6 +24,7 @@ public class AppUser : IdentityUser<int>
     public List<Message> MessageSent { get; set; } = [];
     public List<Message> MessageRecieved { get; set; } = [];
     public ICollection<AppUserRole> UserRoles { get; set; } = [];
+    public List<Post> Posts{ get; set; } = [];
 
     // public int GetAge()
     // {
