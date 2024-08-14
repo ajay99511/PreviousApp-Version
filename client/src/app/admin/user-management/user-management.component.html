@@ -1,0 +1,20 @@
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width: 30px;">Username</th>
+                <th style="width: 40px;">Active Roles</th>
+                <th style="width: 30px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (user of users; track user.username) {
+                <tr>
+                    <td>{{user.username}}</td>
+                    <td>{{user.roles}}</td>
+                    <td><button (click)="openRolesModal(user)" class="btn btn-info">Edit Roles</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

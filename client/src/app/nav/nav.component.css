@@ -1,0 +1,9 @@
+.dropdown-toggle,.dropdown-item{
+    cursor: pointer;
+}
+img{
+    border: white 2px solid;
+    max-height: 50px;
+    display: inline;
+    shape-rendering: crispEdges;
+}

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" routerLinkActive="active" routerLink = "/">DatingApp</a>
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        @if (accountService.currentUser()) {
+          <li class="nav-item">
+            <a routerLink="/members" routerLinkActive="active" class= "nav-link">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/lists" routerLinkActive="active" class= "nav-link">FriendList</a>
+          </li>
+          <li class="nav-item">
+            <a class= "nav-link" routerLinkActive="active" routerLink="/messages">Messages</a>
+          </li>
+          <li *appHasRole="['Admin','Moderator']"  class="nav-item">
+            <a class= "nav-link"  routerLinkActive="active" routerLink="/admin">Admin</a>
+          </li>
+        }
+        <li class="nav-item">
+          <a class= "nav-link" routerLinkActive="active" routerLink="/errors">Errors</a>
+        </li>
+      </ul>
+      @if (accountService.currentUser()) {
+        <div dropdown class="dropdown">
+          <img src="{{accountService.currentUser()?.photoUrl || './assets/user.png'}}"
+          alt="{{accountService.currentUser()?.username}}"
+          >
+          <a dropdownToggle class="dropdown-toggle text-light text-decoration-none">
+            Welcome{{accountService.currentUser()?.knownAs}}
+          </a>
+          <div *dropdownMenu class="dropdown-menu">
+            <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
+            <div class="dropdown-divivder"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+      }
+      @if (!accountService.currentUser()) {
+        <form #loginForm ="ngForm" (ngSubmit)="login()" class ="d-flex" autocomplete="off">
+          <input name="username" [(ngModel)]="model.username" class="form-control me-2" placeholder="username">
+          <input name ="password" [(ngModel)]="model.password" class="form-control me-2" type="password" placeholder="password">
+          <button class="btn btn-outline-success" type="submit">login</button>
+        </form>
+      }
+    </div>
+  </nav>
