@@ -78,7 +78,7 @@ public class MessageRepository(DataContext context,IMapper mapper) : IMessageRep
         if(unreadMessages.Count != 0)
         {
             unreadMessages.ForEach(x=>x.DateRead = DateTime.UtcNow);
-            await context.SaveChangesAsync();
+            // await context.SaveChangesAsync(); For this we have used has changes method to track changes and save 
         }
         return messages;
         // mapper.Map<IEnumerable<MessageDto>>(messages);
@@ -89,10 +89,10 @@ public class MessageRepository(DataContext context,IMapper mapper) : IMessageRep
         context.connections.Remove(connection);
     }
 
-    public async Task<bool> SaveAllAsync()
-    {
-        return await context.SaveChangesAsync()>0;
-    }
+    // public async Task<bool> SaveAllAsync()
+    // {
+    //     return await context.SaveChangesAsync()>0;
+    // }
 
     public async Task<Group?> GetGroupForConnection(string connectionId)
     {

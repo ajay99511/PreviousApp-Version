@@ -15,16 +15,18 @@ public static class ApplicationServiceExtensions
         services.AddScoped<ITokenService,TokenService>();
         services.AddScoped<IUserRepository,UserRepository>();
         services.AddScoped<IPhotoService,PhotoService>();
+        services.AddScoped<IUnitOfWork,UnitOfWork>();
         services.AddScoped<LogUserActivity>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.AddScoped<ILikeRepository,LikeRepository>();
+        services.AddScoped<IPostRepository,PostRepository>();
         services.AddScoped<IMessageRepository, MessageRepository>();
         services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
         services.AddSingleton<PresenceTracker>();
         services.AddSignalR();
         services.AddDbContext<DataContext>(opt=>
         {
-            opt.UseSqlite(config.GetConnectionString("Default Connection"));
+            opt.UseSqlServer(config.GetConnectionString("Default Connection"));
         });
         return services;
     }

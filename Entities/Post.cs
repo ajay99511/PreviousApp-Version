@@ -8,8 +8,9 @@ namespace API.Entities
     public class Post
     {
         public int Id { get; set;}
+        public required string CreatorName { get; set; }
         public string Description{ get; set; } = "";
-        public string? PhotoUrl{ get; set; }
+        public string PhotoUrl{ get; set; } = "";
         public DateTime CreatedAt{ get; set;} = DateTime.UtcNow;
 
         //Navigation Properties
